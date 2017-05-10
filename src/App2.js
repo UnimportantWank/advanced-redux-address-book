@@ -12,7 +12,7 @@ class ListOfUsers extends React.Component{
     //where do i call it
     //this.notifyOfUserChanged();
 
-   
+
     var userDivs = this.state.users.map(function(user){
       return <div>
         <a onClick={// curly brace to start javascript part of jsx
@@ -35,13 +35,13 @@ class ListOfUsers extends React.Component{
               this.state.users.pop();
               this.setState({user:this.state.users})
               console.log(this.props.users.length);
-              }} 
-              type="button" 
+              }}
+              type="button"
               value="delete user">Delete user</button>
              {userDivs}
            </div>)
   }
-} 
+}
 class UserDetail extends React.Component{
   render(){
     return <div>{this.props.user.first_name}</div>
@@ -71,14 +71,14 @@ class App extends Component {
     return (
       <div className="App">
         current user: <UserDetail user={this.state.currentUser} />
-        type something here 
-        <input 
+        type something here
+        <input
         onChange={(e)=>this.handleTextChange(e)}
         value={this.state.thetext}
         />
         <ListOfUsers notifyOfUserChanged={this.handleUserChanged.bind(this)} users={users}/>
         <UserDetail user = {this.state.currentUser}/>
-     
+
       </div>
     );
   }

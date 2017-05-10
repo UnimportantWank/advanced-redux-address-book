@@ -14,7 +14,7 @@ class ListOfUsers extends React.Component{
              {userDivs}
            </div>)
   }
-} 
+}
 class UserDetail extends React.Component{
   render(){
     var user = users[0];
@@ -28,7 +28,7 @@ class App extends Component {
       <div className="App">
         <ListOfUsers  />
         <UserDetail />
-     
+
       </div>
     );
   }

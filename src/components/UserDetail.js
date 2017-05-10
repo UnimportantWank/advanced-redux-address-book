@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import UserInfo from './UserInfo';
+import { connect }from 'react-redux';
+
 function UserDetail (props){
   var user = props.user;
     return (
@@ -9,5 +11,12 @@ function UserDetail (props){
       </div>
     );
 }
+// current user is what it cares about
+function mapStateToProps(state){
+  return {
+    user:state.currentUser
+  }
+}
 
-export default UserDetail;
+const usersContainer = connect(mapStateToProps)(UserDetail);
+export default usersContainer
